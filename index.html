@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RadioLand Station Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📻 RadioLand Station Finder</h1>
+            <p>Search Philadelphia area radio stations using live API data</p>
+        </header>
+
+        <main>
+            <div class="search-section">
+                <h2>Station Search</h2>
+                <div class="search-input-group">
+                    <input type="text"
+                           id="callsignInput"
+                           placeholder="Enter call sign (e.g., WMMR, KYW, WXPN)"
+                           maxlength="6"
+                           onkeypress="handleEnterKey(event)">
+                    <button onclick="searchStation()" id="searchBtn">Search Station</button>
+                </div>
+                <div class="search-help">
+                    <p><strong>Try these Philadelphia stations:</strong> WMMR, KYW, WXPN, WDAS, WXTU</p>
+                </div>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>🔍 Searching RadioLand database...</p>
+            </div>
+
+            <div id="error" class="error hidden"></div>
+
+            <div id="results" class="results hidden">
+                <!-- Results will be inserted here by JavaScript -->
+            </div>
+        </main>
+
+        <footer>
+            <p>Built with Git & REST APIs | CSC 2053 Week 6 Lab</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
